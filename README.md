@@ -45,8 +45,64 @@ This process is triggered just after the successfull completion of CI Job and he
 
 3. Add my default **ansibleuser** to the group **sudo** and **docker** to allow him to run all necessary commands of docker.
 4. Add the group Ansible to the **Hosts** which tells to run the ansible playbook on defined host. Here I am using same Ansible Host to run the playbook needed for Continous Integration part.
-5. Write a playbook for CI Job and login to Dockerhub to validate if Image is pushed or not.
+5. Write a playbook for CI Job and run, then login to Dockerhub to validate if Image is pushed or not.
     ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/eef0ab00-b350-4857-8cc2-31126248349e)
+    ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/c5424014-10aa-4cb5-ab3f-cdc6fec5d533)
+    ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/2418d33f-3e03-41cd-8d7f-6d516711b36e)
 
+### STEP-3: **Create Jenkins Job to Run Ansible Playbook.**
+![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/b9125e02-1c24-4f46-9f41-5caf427d5f63)
 
+### STEP-4: **Create Kubernetes Cluster.**
+1. Create third Virtual Machine named **Kubeserver**.
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/438ead35-98a7-4e0c-b48f-c31494b5ca79)
    
+2. Create Kubernetes cluster named **waveapp-cluster**
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/87511666-f862-46e4-829e-400112cc34ad)
+
+3. Connect to the Cluster
+
+### STEP-4: **Create Deployment and Service Manifest Files.**
+Deployment file! <br>
+ ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/f4f2e03c-246b-4341-b849-2b352d8846a1) <br>
+Service File! <br>
+ ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/47a50c90-da58-4212-9250-b0266f2b8f4c) <br>
+
+### STEP-5: **Create Ansible Playbook for Deployment and Service Manifest Files.**
+1. Create Ansible Playbook to trigger Deployment and Service Manifest Files.
+  ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/1f005799-7639-4fc9-a2a9-d14728dc0728)
+
+2. Display all the pods and services running.
+3.  ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/b621a168-04c3-4d69-ab36-2da9667ca230)
+4. Copy the External IP from above and type it on browser, you can see the Deployed Website on Cloud.
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/d4c70a10-5382-4231-84b8-d479aa9f593c)
+
+### STEP-6: Create Jenkins Deployment Job for Kubernetes
+1. Create the freestyle project for CD Joband set the **exec** command as follows
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/c89815af-864f-4aac-87e9-c5130615a41c)
+
+2. I want to trigger the CD Job only after successful buil of CI Job , so set such configuration showed below
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/f472b88f-9fec-4287-8a5d-c165cde95dc5)
+
+## Now All seteup is done🤗!
+
+## FINAL DEMO!!!
+
+### Developer updated any piece of Code
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/a9bc8d9e-92d9-45aa-8602-395297ab4542)
+
+### I have setted up the Jenkins in such a way that it looks at repostitory in every minute and triggers the CI Job if found any change in code.
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/1e88d404-b440-4c8f-a711-1bfe0e65dddc)
+
+### After success of CI Job, It will automatically trigger the CD Job
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/61b64979-20f9-4ac3-ac89-f34c755c7959)
+   ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/203ee9a6-e262-4cfe-bef8-c8d31c09448e)
+
+### Booyah! Website gets updated.
+  **BEFORE** <br> 
+     ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/eca1ee71-009c-42c7-a4e2-1a53718694a1) <br>
+  **AFTER**  <br>
+     ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/ff7ddc19-84ba-4fc0-bc43-7c233b7a8a78)  <br>
+
+
+
