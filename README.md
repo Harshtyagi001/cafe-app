@@ -63,9 +63,9 @@ This process is triggered just after the successfull completion of CI Job and he
 3. Connect to the Cluster
 
 ### STEP-4: **Create Deployment and Service Manifest Files.**
-Deployment file! <br>
+**Deployment file** <br>
  ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/f4f2e03c-246b-4341-b849-2b352d8846a1) <br>
-Service File! <br>
+**Service File** <br>
  ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/47a50c90-da58-4212-9250-b0266f2b8f4c) <br>
 
 ### STEP-5: **Create Ansible Playbook for Deployment and Service Manifest Files.**
