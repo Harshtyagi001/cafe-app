@@ -61,6 +61,7 @@ This process is triggered just after the successfull completion of CI Job and he
    ![image](https://github.com/Harshtyagi001/cafe-app/assets/96621226/87511666-f862-46e4-829e-400112cc34ad)
 
 3. Connect to the Cluster
+   ---- Login into azure portal by using command: az login --use-device-code , then download azure-cli and connect to your cluster by selecting command from Cluster Connect option.
 
 ### STEP-4: **Create Deployment and Service Manifest Files.**
 **Deployment file** <br>
